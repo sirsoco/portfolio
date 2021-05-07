@@ -8,42 +8,47 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography';
 import './App.css';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    background: '17181C',
-    display: 'inline'
+  },
+  container: {
+    padding: theme.spacing()
   },
   bioText: {
-   justifyContent: 'center'
+   justifyContent: 'center',
+   marginLeft: theme.spacing(60)
   },
   HeadShot: {
+    margin: 'auto',
+    display: 'block',
     height: 274,
     width: 274
   },
-})
+}))
+
 function App() {
   const classes = useStyles();
   return (
-    <Container className={classes.root}>
-            <Grid  container>
+    <div className={classes.root}>
+            <Grid className={classes.container} container>
               <Grid item>
                 <img className={classes.HeadShot} src={HeadShot}/>
               </Grid>
             <Grid  className= {classes.bioText}item>
-              <Typography>
+              <Typography align='center'>
                 Solomon Obure
               </Typography>
-              <Typography>
+              <Typography align='center'>
                 Full Stack Engineer
               </Typography>
-              <Typography>
+              <Typography align='center'>
                 remote
               </Typography>
             </Grid>
           
             </Grid>
-    </Container>
+    </div>
   );
 }
 
