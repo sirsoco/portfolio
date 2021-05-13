@@ -3,67 +3,101 @@ import "./App.css";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box"
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { Container } from "@material-ui/core";
-
+import zIndex from "@material-ui/core/styles/zIndex";
 
 const useStyles = makeStyles((theme) => ({
-  root: { 
+  root: {
     flexGrow: 1,
-    display: 'flex',
-    alignItems: 'center',
-    padding: theme.spacing(3),
-    margin: 'auto',
-    maxWidth: 1170,
+    position: "fixed",
+    backgroundColor: "#FFFFFF!important",
+    paddingTop: "15px",
+    paddingBottom: "15px",
+    width: "100%",
+    zIndex: "999",
+    display: "block",
   },
-  banner: {
-    paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
+  container: {
+    display: "flex",
+    alignItems: "center",
+    marginRight: "auto",
+    marginLeft: "auto",
+    maxWidth: "1170px",
+    paddingLeft: "15px",
+    paddingRight: "15px",
+  },
+  sitebranding: {
+    marginRight: "auto",
+    marginLeft: "auto",
+    paddingLeft: "15px",
+    paddingRight: "15px",
+    paddingTop: "12px",
   },
   navigation: {
-    display: 'block',
-    float: 'right',
-    paddingTop: theme.spacing(2),
-    paddingLeft: theme.spacing(2)
+    display: "flex",
+    float: "right",
+    paddingLeft: "15px",
+    paddingRight: "15px",
+    justifyContent: "flex-end",
   },
-  bioText: {
-    justifyContent: "center",
-    display: 'inline-block',
-    marginLeft: theme.spacing(60),
+  menu: {
+    display: "block",
+    paddingLeft: "15px",
+    paddingRight: "15px",
   },
-  headshot: {
-    margin: "auto",
-    display: "inline-block",
-    height: 274,
-    width: 274,
-  },
-  intro: {
-    justifyContent: "center",
-    display: 'inline-block',
-    marginLeft: theme.spacing(60),
-  }
 }));
+
+const title = createMuiTheme({
+  typography: {
+    fontFamily: "Sourcecode Pro, monospace",
+    fontSize: "16",
+    fontWeight: "300",
+    letterSpacing: "1",
+    h1:{
+      "fontWeight": 400,
+      "fontSize": 18
+    }
+  },
+});
 
 function App() {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
-
-      <Grid container maxWidth='false' container md={4} sm={6} xs={12} >
-        <Grid itemclassName={classes.brand}>
-          <Typography>
-            Solomon Obure
-          </Typography>
-        </Grid>
-        <Grid item md={4} sm={6} xs={12} className={classes.navigation}>
-          <ul>
-            <li>Work</li>
-            <li>About</li>
-            <li>Contact</li>
-          </ul>
-        </Grid>
-      </Grid>
-     
-    </div>
+    <ThemeProvider>
+      <div className={classes.root}>
+        <div className={classes.container}>
+          <Grid xs={12} className={classes.sitebranding} container>
+            <Grid item md={4} sm={6} xs={12}>
+              <ThemeProvider theme={title}>
+                <Typography variant="h1">
+                  <Box letterSpacing={2} m={1}>
+                  SOLOMON OBURE
+                  </Box>
+                </Typography>
+              </ThemeProvider>
+            </Grid>
+            <Grid
+              container
+              md={8}
+              direction="row"
+              className={classes.navigation}
+            >
+              <Grid className={classes.menu} item>
+                <Typography>About</Typography>
+              </Grid>
+              <Grid className={classes.menu} item>
+                <Typography>Work</Typography>
+              </Grid>
+              <Grid className={classes.menu} item>
+                <Typography>Contact</Typography>
+              </Grid>
+            </Grid>
+          </Grid>
+        </div>
+      </div>
+    </ThemeProvider>
   );
 }
 

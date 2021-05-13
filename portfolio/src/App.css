@@ -28,10 +28,11 @@
   color: #61dafb;
 }
 
-@media (min-width: 1200px) {
-  .MuiContainer-maxWidthLg  {
-    max-width: 1170px;
-}}
+@media (min-width: 960px) {
+.MuiGrid-grid-md-4 {
+  float: 'left'
+}
+}
 
 @keyframes App-logo-spin {
   from {
