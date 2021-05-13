@@ -28,6 +28,11 @@
   color: #61dafb;
 }
 
+@media (min-width: 1200px) {
+  .MuiContainer-maxWidthLg  {
+    max-width: 1170px;
+}}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
