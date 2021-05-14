@@ -3,7 +3,7 @@ import "./App.css";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Box from "@material-ui/core/Box"
+import Box from "@material-ui/core/Box";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { Container } from "@material-ui/core";
 import zIndex from "@material-ui/core/styles/zIndex";
@@ -42,6 +42,9 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: "15px",
     justifyContent: "flex-end",
   },
+  title2: {
+    marginTop: "52px",
+  },
   menu: {
     display: "block",
     paddingLeft: "15px",
@@ -55,20 +58,33 @@ const title = createMuiTheme({
     fontSize: "16",
     fontWeight: "300",
     letterSpacing: "1",
-    h1:{
-      "fontWeight": 400,
-      "fontSize": 18
-    }
+    h1: {
+      fontWeight: 400,
+      fontSize: 18,
+    },
   },
 });
 
 const menu = createMuiTheme({
   typography: {
-  fontFamily: "Sourcecode Pro, monospace",
-  h2:{
-    "fontWeight": 300,
-    "fontSize": 12
-  }
+    fontFamily: "Sourcecode Pro, monospace",
+    fontSize: "12px",
+    h2: {
+      fontWeight: 300,
+      fontSize: 12,
+    },
+  },
+});
+
+const title2 = createMuiTheme({
+  typography: {
+    fontFamily: "Playfair Display, Sans-serif",
+    fontSize: "30px",
+    h1: {
+      "fontWeight": 600,
+      "fontSize": 30,
+
+    },
   },
 });
 
@@ -83,7 +99,7 @@ function App() {
               <ThemeProvider theme={title}>
                 <Typography variant="h1">
                   <Box letterSpacing={2} m={1}>
-                  SOLOMON OBURE
+                    SOLOMON OBURE
                   </Box>
                 </Typography>
               </ThemeProvider>
@@ -94,20 +110,31 @@ function App() {
               direction="row"
               className={classes.navigation}
             >
-            <ThemeProvider theme={menu}>
-              <Grid className={classes.menu} item>
-                <Typography variant="h2">ABOUT</Typography>
-              </Grid>
-              <Grid className={classes.menu} item>
-                <Typography variant="h2">WORK</Typography>
-              </Grid>
-              <Grid className={classes.menu} item>
-                <Typography variant="h2">CONTACT</Typography>
-              </Grid>
-            </ThemeProvider>
+              <ThemeProvider theme={menu}>
+                <Grid className={classes.menu} item>
+                  <Typography variant="h2">ABOUT</Typography>
+                </Grid>
+                <Grid className={classes.menu} item>
+                  <Typography variant="h2">WORK</Typography>
+                </Grid>
+                <Grid className={classes.menu} item>
+                  <Typography variant="h2">CONTACT</Typography>
+                </Grid>
+              </ThemeProvider>
             </Grid>
           </Grid>
         </div>
+        <Grid container className={classes.container}>
+          <Grid item md={4} sm={6} xs={12}>
+            <ThemeProvider theme={title2}>
+              <Typography variant="h1">
+                <Box className={classes.title2} letterSpacing={1} m={1}>
+                Product/Portrait/Travel
+                </Box>
+              </Typography>
+            </ThemeProvider>
+          </Grid>
+        </Grid>
       </div>
     </ThemeProvider>
   );
