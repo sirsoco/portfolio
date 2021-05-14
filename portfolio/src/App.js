@@ -62,6 +62,16 @@ const title = createMuiTheme({
   },
 });
 
+const menu = createMuiTheme({
+  typography: {
+  fontFamily: "Sourcecode Pro, monospace",
+  h2:{
+    "fontWeight": 300,
+    "fontSize": 12
+  }
+  },
+});
+
 function App() {
   const classes = useStyles();
   return (
@@ -84,15 +94,17 @@ function App() {
               direction="row"
               className={classes.navigation}
             >
+            <ThemeProvider theme={menu}>
               <Grid className={classes.menu} item>
-                <Typography>About</Typography>
+                <Typography variant="h2">ABOUT</Typography>
               </Grid>
               <Grid className={classes.menu} item>
-                <Typography>Work</Typography>
+                <Typography variant="h2">WORK</Typography>
               </Grid>
               <Grid className={classes.menu} item>
-                <Typography>Contact</Typography>
+                <Typography variant="h2">CONTACT</Typography>
               </Grid>
+            </ThemeProvider>
             </Grid>
           </Grid>
         </div>
