@@ -43,9 +43,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-end",
   },
   title2: {
-    marginTop: "52px",
+    marginTop: "91px",
   },
-  menu: {
+  title3: {
+    marginTop: "6px",
+  },
+  menutype: {
     display: "block",
     paddingLeft: "15px",
     paddingRight: "15px",
@@ -54,9 +57,9 @@ const useStyles = makeStyles((theme) => ({
 
 const title = createMuiTheme({
   typography: {
-    fontFamily: "Sourcecode Pro, monospace",
+    fontFamily: "Source code Pro, monospace",
     fontSize: "16",
-    fontWeight: "300",
+    fontWeight: "300PX",
     letterSpacing: "1",
     h1: {
       fontWeight: 400,
@@ -67,7 +70,7 @@ const title = createMuiTheme({
 
 const menu = createMuiTheme({
   typography: {
-    fontFamily: "Sourcecode Pro, monospace",
+    fontFamily: "Source Code Pro, monospace",
     fontSize: "12px",
     h2: {
       fontWeight: 300,
@@ -81,9 +84,20 @@ const title2 = createMuiTheme({
     fontFamily: "Playfair Display, Sans-serif",
     fontSize: "30px",
     h1: {
-      "fontWeight": 600,
-      "fontSize": 30,
+      fontWeight: 600,
+      fontSize: 30,
+    },
+  },
+});
 
+const title3 = createMuiTheme({
+  typography: {
+    fontFamily: "Playfair Display, Sans-serif",
+    letterSpacing: "8",
+    h1: {
+      fontWeight: 600,
+      fontSize: 100,
+      "letterSpacing": 8,
     },
   },
 });
@@ -111,14 +125,26 @@ function App() {
               className={classes.navigation}
             >
               <ThemeProvider theme={menu}>
-                <Grid className={classes.menu} item>
-                  <Typography variant="h2">ABOUT</Typography>
+                <Grid className={classes.menutype} item>
+                  <Typography variant="h2">
+                    <Box letterSpacing={1} m={1}>
+                      ABOUT
+                    </Box>
+                  </Typography>
                 </Grid>
-                <Grid className={classes.menu} item>
-                  <Typography variant="h2">WORK</Typography>
+                <Grid className={classes.menutype} item>
+                  <Typography variant="h2">
+                    <Box letterSpacing={1} m={1}>
+                      WORK
+                    </Box>
+                  </Typography>
                 </Grid>
-                <Grid className={classes.menu} item>
-                  <Typography variant="h2">CONTACT</Typography>
+                <Grid className={classes.menutype} item>
+                  <Typography variant="h2">
+                    <Box letterSpacing={1} m={1}>
+                      CONTACT
+                    </Box>
+                  </Typography>
                 </Grid>
               </ThemeProvider>
             </Grid>
@@ -129,7 +155,18 @@ function App() {
             <ThemeProvider theme={title2}>
               <Typography variant="h1">
                 <Box className={classes.title2} letterSpacing={1} m={1}>
-                Product/Portrait/Travel
+                  Js/Node/React
+                </Box>
+              </Typography>
+            </ThemeProvider>
+          </Grid>
+        </Grid>
+        <Grid container className={classes.container}>
+          <Grid item md={4} sm={6} xs={12}>
+            <ThemeProvider theme={title3}>
+              <Typography variant="h1">
+                <Box className={classes.title3} letterSpacing={6}>
+                  FullStack
                 </Box>
               </Typography>
             </ThemeProvider>
