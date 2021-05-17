@@ -1,4 +1,4 @@
-import HeadShot from "./HeadShot.jpeg";
+import zIndex from "@material-ui/core/styles/zIndex";
 import "./App.css";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -6,7 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { Container } from "@material-ui/core";
-import zIndex from "@material-ui/core/styles/zIndex";
+import WandrMock from "./wander_macbook_pro.jpeg"
+import DishTrackerMock from "./dishtracker_iphonex.jpeg"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,12 +48,26 @@ const useStyles = makeStyles((theme) => ({
   },
   title3: {
     marginTop: "6px",
+    paddingBottom: "50px",
   },
   menutype: {
     display: "block",
     paddingLeft: "15px",
     paddingRight: "15px",
   },
+  DishTracker: {
+    display: "flex",
+    maxWidth: "100%",
+    maxHeight: "100%",
+    paddingRight: "15px",
+  },
+  Wandr: {
+    display: "flex",
+    maxWidth: "100%",
+    maxHeight: "100%",
+    paddingLeft: "15px",
+    paddingBottom: "30px",
+  }
 }));
 
 const title = createMuiTheme({
@@ -97,7 +112,7 @@ const title3 = createMuiTheme({
     h1: {
       fontWeight: 600,
       fontSize: 100,
-      "letterSpacing": 8,
+      letterSpacing: 8,
     },
   },
 });
@@ -155,7 +170,7 @@ function App() {
             <ThemeProvider theme={title2}>
               <Typography variant="h1">
                 <Box className={classes.title2} letterSpacing={1} m={1}>
-                  Js/Node/React
+                  JS/Node/React
                 </Box>
               </Typography>
             </ThemeProvider>
@@ -171,6 +186,15 @@ function App() {
               </Typography>
             </ThemeProvider>
           </Grid>
+        </Grid>
+        <Grid container className={classes.container}>
+      
+          <Grid item md={6} sm={6} xs={12}>
+            <img className={classes.DishTracker} src={DishTrackerMock}/>
+          </Grid>
+          <Grid item md={6} sm={12} xs={12}>
+            <img className={classes.Wandr} src={WandrMock}/>
+          </Grid> 
         </Grid>
       </div>
     </ThemeProvider>
