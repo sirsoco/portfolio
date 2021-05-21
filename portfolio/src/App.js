@@ -1,3 +1,10 @@
+import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import zIndex from "@material-ui/core/styles/zIndex";
 import "./App.css";
 import { makeStyles } from "@material-ui/core/styles";
@@ -5,9 +12,12 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import { Container } from "@material-ui/core";
-import WandrMock from "./wander_macbook_pro.jpeg"
-import DishTrackerMock from "./dishtracker_iphonex.jpeg"
+import WandrMock from "./wander_macbook_pro.jpeg";
+import DishTrackerMock from "./dishtracker_iphonex.jpeg";
+import landingPage from './landingPage';
+import aboutPage from './aboutPage.js';
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "100%",
     paddingLeft: "15px",
     paddingBottom: "30px",
-  }
+  },
 }));
 
 const title = createMuiTheme({
@@ -94,32 +104,12 @@ const menu = createMuiTheme({
   },
 });
 
-const title2 = createMuiTheme({
-  typography: {
-    fontFamily: "Playfair Display, Sans-serif",
-    fontSize: "30px",
-    h1: {
-      fontWeight: 600,
-      fontSize: 30,
-    },
-  },
-});
 
-const title3 = createMuiTheme({
-  typography: {
-    fontFamily: "Playfair Display, Sans-serif",
-    letterSpacing: "8",
-    h1: {
-      fontWeight: 600,
-      fontSize: 100,
-      letterSpacing: 8,
-    },
-  },
-});
 
 function App() {
   const classes = useStyles();
   return (
+    <Router>
     <ThemeProvider>
       <div className={classes.root}>
         <div className={classes.container}>
@@ -165,39 +155,19 @@ function App() {
             </Grid>
           </Grid>
         </div>
-        <Grid container className={classes.container}>
-          <Grid item md={4} sm={6} xs={12}>
-            <ThemeProvider theme={title2}>
-              <Typography variant="h1">
-                <Box className={classes.title2} letterSpacing={1} m={1}>
-                  JS/Node/React
-                </Box>
-              </Typography>
-            </ThemeProvider>
-          </Grid>
-        </Grid>
-        <Grid container className={classes.container}>
-          <Grid item md={4} sm={6} xs={12}>
-            <ThemeProvider theme={title3}>
-              <Typography variant="h1">
-                <Box className={classes.title3} letterSpacing={6}>
-                  FullStack
-                </Box>
-              </Typography>
-            </ThemeProvider>
-          </Grid>
-        </Grid>
-        <Grid container className={classes.container}>
-      
-          <Grid item md={6} sm={6} xs={12}>
-            <img className={classes.DishTracker} src={DishTrackerMock}/>
-          </Grid>
-          <Grid item md={6} sm={12} xs={12}>
-            <img className={classes.Wandr} src={WandrMock}/>
-          </Grid> 
-        </Grid>
+
+       
       </div>
     </ThemeProvider>
+
+      <Switch>
+          <Route exact path="/" component={landingPage}>
+          </Route>
+          <Route exact path='About' component={aboutPage}>
+          </Route>
+      </Switch>
+
+    </Router>
   );
 }
 
