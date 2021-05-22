@@ -4,15 +4,15 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import WandrMock from "./wander_macbook_pro.jpeg";
-import DishTrackerMock from "./dishtracker_iphonex.jpeg";
-import Container from "@material-ui/core/Container";
+import WandrMock from "../public/wander_macbook_pro.jpeg";
+import DishTrackerMock from "../public/dishtracker_iphonex.jpeg";
+
 
 export default function LandingPage(props) {
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
-      position: "fixed",
+      position: "sticky",
       backgroundColor: "#FFFFFF!important",
       paddingTop: "15px",
       paddingBottom: "15px",
@@ -90,7 +90,6 @@ export default function LandingPage(props) {
             </ThemeProvider>
           </Grid>
         </Grid>
-        .
         <Grid container className={classes.container}>
           <Grid item md={4} sm={6} xs={12}>
             <ThemeProvider theme={title3}>

@@ -12,10 +12,12 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import WandrMock from "./wander_macbook_pro.jpeg";
-import DishTrackerMock from "./dishtracker_iphonex.jpeg";
-import landingPage from './landingPage';
-import aboutPage from './aboutPage.js';
+import WandrMock from "./public/wander_macbook_pro.jpeg";
+import DishTrackerMock from "./public/dishtracker_iphonex.jpeg";
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import landingPage from './pages/landingPage';
+import aboutPage from './pages/aboutPage';
 
 
 
@@ -27,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: "15px",
     paddingBottom: "15px",
     width: "100%",
-    zIndex: "999",
+  
     display: "block",
   },
   container: {
@@ -36,14 +38,12 @@ const useStyles = makeStyles((theme) => ({
     marginRight: "auto",
     marginLeft: "auto",
     maxWidth: "1170px",
-    paddingLeft: "15px",
     paddingRight: "15px",
   },
   sitebranding: {
     marginRight: "auto",
     marginLeft: "auto",
-    paddingLeft: "15px",
-    paddingRight: "15px",
+    
     paddingTop: "12px",
   },
   navigation: {
@@ -78,12 +78,16 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: "15px",
     paddingBottom: "30px",
   },
+  Link: {
+    color: 'inherit',
+    textDecoration: 'none',
+  }
 }));
 
 const title = createMuiTheme({
   typography: {
     fontFamily: "Source code Pro, monospace",
-    fontSize: "16",
+    fontSize: 18,
     fontWeight: "300PX",
     letterSpacing: "1",
     h1: {
@@ -109,16 +113,19 @@ const menu = createMuiTheme({
 function App() {
   const classes = useStyles();
   return (
+    
     <Router>
     <ThemeProvider>
+  
+      <Toolbar>
       <div className={classes.root}>
         <div className={classes.container}>
-          <Grid xs={12} className={classes.sitebranding} container>
+          <Grid container xs={12} className={classes.sitebranding} >
             <Grid item md={4} sm={6} xs={12}>
               <ThemeProvider theme={title}>
                 <Typography variant="h1">
                   <Box letterSpacing={2} m={1}>
-                    SOLOMON OBURE
+                    <a className={classes.Link} href='/'>SOLOMON OBURE</a>
                   </Box>
                 </Typography>
               </ThemeProvider>
@@ -133,7 +140,7 @@ function App() {
                 <Grid className={classes.menutype} item>
                   <Typography variant="h2">
                     <Box letterSpacing={1} m={1}>
-                      ABOUT
+                    <a className={classes.Link} href='/about'>ABOUT</a>
                     </Box>
                   </Typography>
                 </Grid>
@@ -155,19 +162,23 @@ function App() {
             </Grid>
           </Grid>
         </div>
-
-       
       </div>
+      </Toolbar>
+
+      
     </ThemeProvider>
 
+  
+  
       <Switch>
-          <Route exact path="/" component={landingPage}>
+          <Route exact path='/' component={landingPage}>
           </Route>
-          <Route exact path='About' component={aboutPage}>
+          <Route exact path='/about' component={aboutPage}>
           </Route>
       </Switch>
 
     </Router>
+    
   );
 }
 
