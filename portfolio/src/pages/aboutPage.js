@@ -52,6 +52,9 @@ export default function AboutPage(props) {
       paddingLeft: "15px",
       paddingBottom: "30px",
     },
+    skill: {
+      display: "inline-flex",
+    },
   }));
 
   const title2 = createMuiTheme({
@@ -132,7 +135,7 @@ export default function AboutPage(props) {
           </Grid>
         </Grid>
         <Grid container className={classes.container}>
-          <Grid item md={6} sm={6} xs={12} className={classes.skill}>
+          <Grid item md={2} sm={6} xs={12} >
             <ThemeProvider theme={biotext}>
             <Box letterSpacing={1}>
               <Typography>
@@ -141,33 +144,36 @@ export default function AboutPage(props) {
             </Box>
             </ThemeProvider>
           </Grid>
-          <Grid item>
+          <Grid  className={classes.skill} item md={10}>
           <Box letterSpacing={1}>
               <img src={JavaScript} />
               <Typography>
                 JavaScript
              </Typography>
             </Box>
-          </Grid>
-          <Grid item>
-          <Box letterSpacing={1}>
+            <Box letterSpacing={1}>
             <img src={HTML} />
               <Typography>
                 HTML 5
               </Typography>
               </Box>
-          </Grid>
-          <Grid item>
-            <Box letterSpacing={1}>
+              <Box letterSpacing={1}>
+            <img src={HTML} />
+              <Typography>
+                HTML 5
+              </Typography>
+              </Box>
+              <Box letterSpacing={1}>
                 <img src={ReactSVG} />
                 <Typography>
                     React
                 </Typography>
             </Box>
           </Grid>
+          
         </Grid>
         <Grid container className={classes.container}>
-          <Grid item md={6} sm={6} xs={12} className={classes.cert}>
+          <Grid item md={2} sm={6} xs={12} className={classes.cert}>
             <ThemeProvider theme={biotext}>
               <Box letterSpacing={1}>
                 <Typography>
@@ -176,13 +182,13 @@ export default function AboutPage(props) {
               </Box>
               </ThemeProvider>
           </Grid>
-          <Grid item>
+          <Grid item md={8}>
           <Box letterSpacing={1}>
               <img src={Cert} />
               <Typography>
                 JavaScript
              </Typography>
-            </Box>
+          </Box>
           </Grid>
         </Grid>
       </div>
