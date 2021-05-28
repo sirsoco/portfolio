@@ -8,7 +8,6 @@ import JavaScript from '../public/icons8-javascript.svg';
 import HTML from '../public/icons8-html-5.svg';
 import ReactSVG from '../public/icons8-react.svg';
 import Cert from '../public/fullstackcert.png';
-import { loremIpsum } from "lorem-ipsum";
 
 export default function AboutPage(props) {
   const useStyles = makeStyles((theme) => ({
@@ -31,13 +30,23 @@ export default function AboutPage(props) {
       paddingLeft: "15px",
       paddingRight: "15px",
     },
+    container1: {
+      display: "flex",
+      alignItems: "center",
+      marginRight: "auto",
+      marginLeft: "auto",
+      maxWidth: "1170px",
+      paddingLeft: "15px",
+      paddingRight: "15px",
+      paddingBottom: "50px",
+    },
     title2: {
       marginTop: "91px",
     },
     title3: {
-      marginTop: "56px",
+      marginTop: "45px",
       marginBottom: "5px",
-      paddingBottom: "35px",
+      paddingBottom: "px",
     },
     DishTracker: {
       display: "flex",
@@ -54,7 +63,14 @@ export default function AboutPage(props) {
     },
     skill: {
       display: "inline-flex",
+      justifyContent: 'space-evenly',
+      paddingTop: '10px'
     },
+    cert: {
+      display: "inline-flex",
+      paddingTop: '10px',
+      justifyContent: 'center'
+    }
   }));
 
   const title2 = createMuiTheme({
@@ -103,9 +119,21 @@ export default function AboutPage(props) {
     },
   });
 
+  const skill = createMuiTheme({
+    typography: {
+      fontFamily: "Playfair Display, Sans-serif",
+      h2: {
+        fontSize: 45,
+        fontWeight: 600,
+        letterSpacing: 1,
+        lineHeight: 2,
+      },
+    },
+  });
+
   const classes = useStyles();
 
-  return (
+  return(
     <ThemeProvider>
       <div className={classes.root}>
         <Grid container className={classes.container}>
@@ -119,7 +147,7 @@ export default function AboutPage(props) {
             </ThemeProvider>
           </Grid>
         </Grid>
-        <Grid container className={classes.container}>
+        <Grid container className={classes.container1}>
           <Grid item md={12} sm={6} xs={12}>
             <ThemeProvider theme={biotext}>
               <Typography variant="h1">
@@ -134,17 +162,17 @@ export default function AboutPage(props) {
             </ThemeProvider>
           </Grid>
         </Grid>
-        <Grid container className={classes.container}>
+        <Grid container className={classes.container1}>
           <Grid item md={2} sm={6} xs={12} >
-            <ThemeProvider theme={biotext}>
-            <Box letterSpacing={1}>
-              <Typography>
+            <ThemeProvider theme={skill}>
+            <Box letterSpacing={2}>
+              <Typography variant='h2'>
                   Skills
               </Typography>
             </Box>
             </ThemeProvider>
           </Grid>
-          <Grid  className={classes.skill} item md={10}>
+          <Grid item className={classes.skill} item md={10}>
           <Box letterSpacing={1}>
               <img src={JavaScript} />
               <Typography>
@@ -173,16 +201,16 @@ export default function AboutPage(props) {
           
         </Grid>
         <Grid container className={classes.container}>
-          <Grid item md={2} sm={6} xs={12} className={classes.cert}>
-            <ThemeProvider theme={biotext}>
+          <Grid item md={2} sm={6} xs={12}>
+            <ThemeProvider theme={skill}>
               <Box letterSpacing={1}>
-                <Typography>
-                    Cert
+                <Typography variant='h2'>
+                    Certs
                 </Typography>
               </Box>
               </ThemeProvider>
           </Grid>
-          <Grid item md={8}>
+          <Grid item md={8} className={classes.cert}>
           <Box letterSpacing={1}>
               <img src={Cert} />
               <Typography>
