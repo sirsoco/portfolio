@@ -18,6 +18,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import landingPage from './pages/landingPage';
 import aboutPage from './pages/aboutPage';
+import workPage from './pages/workPage';
 
 
 
@@ -147,7 +148,7 @@ function App() {
                 <Grid className={classes.menutype} item>
                   <Typography variant="h2">
                     <Box letterSpacing={1} m={1}>
-                      WORK
+                    <a className={classes.Link} href='/work'>WORK</a>
                     </Box>
                   </Typography>
                 </Grid>
@@ -174,6 +175,8 @@ function App() {
           <Route exact path='/' component={landingPage}>
           </Route>
           <Route exact path='/about' component={aboutPage}>
+          </Route>
+          <Route exact path='/work' component={workPage}>
           </Route>
       </Switch>
 
