@@ -4,10 +4,13 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
-import JavaScript from '../public/icons8-javascript.svg';
-import HTML from '../public/icons8-html-5.svg';
-import ReactSVG from '../public/icons8-react.svg';
-import Cert from '../public/fullstackcert.png';
+import JavaScript from "../public/icons8-javascript.svg";
+import HTML from "../public/icons8-html-5.svg";
+import ReactSVG from "../public/icons8-react.svg";
+import NodeLogo from "../public/icons8-nodejs.svg";
+import MySqlLogo from "../public/icons8-mysql-logo.svg";
+import MongoDbLogo from "../public/icons8-mongodb.svg";
+import Cert from "../public/fullstackcert.png";
 
 export default function AboutPage(props) {
   const useStyles = makeStyles((theme) => ({
@@ -63,14 +66,14 @@ export default function AboutPage(props) {
     },
     skill: {
       display: "inline-flex",
-      justifyContent: 'space-evenly',
-      paddingTop: '10px'
+      justifyContent: "space-evenly",
+      paddingTop: "10px",
     },
     cert: {
       display: "inline-flex",
-      paddingTop: '10px',
-      justifyContent: 'center'
-    }
+      paddingTop: "10px",
+      justifyContent: "center",
+    },
   }));
 
   const title2 = createMuiTheme({
@@ -128,12 +131,18 @@ export default function AboutPage(props) {
         letterSpacing: 1,
         lineHeight: 2,
       },
+      h3: {
+        fontFamily: "Playfair Display, Sans-serif",
+        fontSize: 12,
+        letterSpacing: 0.5,
+        lineHeight: 2,
+      },
     },
   });
 
   const classes = useStyles();
 
-  return(
+  return (
     <ThemeProvider>
       <div className={classes.root}>
         <Grid container className={classes.container}>
@@ -162,61 +171,54 @@ export default function AboutPage(props) {
             </ThemeProvider>
           </Grid>
         </Grid>
-        <Grid container className={classes.container1}>
-          <Grid item md={2} sm={6} xs={12} >
-            <ThemeProvider theme={skill}>
-            <Box letterSpacing={2}>
-              <Typography variant='h2'>
-                  Skills
-              </Typography>
-            </Box>
-            </ThemeProvider>
-          </Grid>
-          <Grid item className={classes.skill} item md={10}>
-          <Box letterSpacing={1}>
-              <img src={JavaScript} />
-              <Typography>
-                JavaScript
-             </Typography>
-            </Box>
-            <Box letterSpacing={1}>
-            <img src={HTML} />
-              <Typography>
-                HTML 5
-              </Typography>
+        <ThemeProvider theme={skill}>
+          <Grid container className={classes.container1}>
+            <Grid item md={2} sm={6} xs={12}>
+              <Box letterSpacing={2}>
+                <Typography variant="h2">Skills</Typography>
+              </Box>
+            </Grid>
+            <Grid item className={classes.skill} item md={10}>
+              <Box letterSpacing={1}>
+                <img src={JavaScript} />
+                <Typography variant="h3">HTML 5</Typography>
               </Box>
               <Box letterSpacing={1}>
-            <img src={HTML} />
-              <Typography>
-                HTML 5
-              </Typography>
+                <img src={HTML} />
+                <Typography variant="h3">JavaScript</Typography>
+              </Box>
+              <Box letterSpacing={1}>
+                <img src={NodeLogo} />
+                <Typography variant="h3">Node</Typography>
               </Box>
               <Box letterSpacing={1}>
                 <img src={ReactSVG} />
-                <Typography>
-                    React
-                </Typography>
-            </Box>
+                <Typography variant="h3">React</Typography>
+              </Box>
+              <Box letterSpacing={1}>
+                <img src={MySqlLogo} />
+                <Typography variant="h3">MySQL</Typography>
+              </Box>
+              <Box letterSpacing={1}>
+                <img src={MongoDbLogo} />
+                <Typography variant="h3">MongoDB</Typography>
+              </Box>
+            </Grid>
           </Grid>
-          
-        </Grid>
+        </ThemeProvider>
         <Grid container className={classes.container}>
           <Grid item md={2} sm={6} xs={12}>
             <ThemeProvider theme={skill}>
               <Box letterSpacing={1}>
-                <Typography variant='h2'>
-                    Certs
-                </Typography>
+                <Typography variant="h2">Certs</Typography>
               </Box>
-              </ThemeProvider>
+            </ThemeProvider>
           </Grid>
           <Grid item md={8} className={classes.cert}>
-          <Box letterSpacing={1}>
+            <Box letterSpacing={1}>
               <img src={Cert} />
-              <Typography>
-                JavaScript
-             </Typography>
-          </Box>
+              <Typography>JavaScript</Typography>
+            </Box>
           </Grid>
         </Grid>
       </div>
