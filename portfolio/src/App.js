@@ -14,6 +14,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import landingPage from './pages/landingPage';
 import aboutPage from './pages/aboutPage';
 import workPage from './pages/workPage';
+import contactPage from './pages/contactPage';
 import footer from './components/Footer/Footer.js';
 
 const useStyles = makeStyles((theme) => ({
@@ -154,7 +155,9 @@ function App() {
                     <Grid className={classes.menutype} item>
                       <Typography variant='h2'>
                         <Box letterSpacing={1} m={1}>
-                          CONTACT
+                        <a className={classes.Link} href='/contact'>
+                            CONTACT
+                          </a>
                         </Box>
                       </Typography>
                     </Grid>
@@ -170,6 +173,7 @@ function App() {
         <Route exact path='/' component={landingPage}></Route>
         <Route exact path='/about' component={aboutPage}></Route>
         <Route exact path='/work' component={workPage}></Route>
+        <Route exact path='/contact' component={contactPage}></Route>
       </Switch>
       
       <footer></footer>
