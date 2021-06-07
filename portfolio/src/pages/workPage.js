@@ -112,7 +112,7 @@ export default function WorkPage(props) {
     buttonGrid1: {
       paddingTop: "27px",
       paddingLeft: "24px",
-      paddingRight: "24px",
+      paddingRight: "60px",
     },
     appName: {
       paddingRight: "65px"
