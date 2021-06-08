@@ -6,14 +6,18 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 export default function Footer(props) {
-    const useStyles = makeStyles((props,theme) => ({
-        root: {
- 
-        },
-        Icon8: {
-            display: props.Icon8
-        },
-    }))
+  const useStyles = makeStyles((props, theme) => ({
+    root: {},
+    container: {
+      display: "inline-flex",
+      justify: "center",
+      alignItems: "center",
+    },
+    item: {},
+    Icon8: {
+      display: props.Icon8,
+    },
+  }));
 
   const d = new Date();
 
@@ -28,23 +32,26 @@ export default function Footer(props) {
       },
     },
   });
-const classes = useStyles();
+  const classes = useStyles();
   return (
     <ThemeProvider theme={footer}>
-      <Grid container justify="center" alignItems="center">
-        <Grid item direction="column" display="block">
-          <Toolbar position="fixed" color="primary">
+      <Toolbar position="fixed" color="primary">
+        <Grid
+          container
+          className={classes.container}
+          justify="center"
+          alignItems="center"
+        >
+          <Grid item>
             <Typography variant="h6" display="center">
               © {d.getFullYear()}
             </Typography>
-          </Toolbar>
+            <Typography variant="h6" className={classes.Icon8}>
+              Icon8
+            </Typography>
+          </Grid>
         </Grid>
-        <Grid item direction="column" display="block" className={classes.Icon8}>
-          <Typography variant="h6" display="center">
-            Icon8
-          </Typography>
-        </Grid>
-      </Grid>
+      </Toolbar>
     </ThemeProvider>
   );
 }

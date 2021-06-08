@@ -201,7 +201,7 @@ export default function WorkPage(props) {
                           Github
                         </a>
                       </Grid>
-                      </Grid>                     
+                      </Grid>          
                     </Grid>
                     <Box textAlign="left">
                       <Typography
