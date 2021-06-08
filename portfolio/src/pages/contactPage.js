@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useEffect, useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
@@ -6,8 +6,11 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import LinkedInIcon from "../public/icons8-linkedin.svg";
 import GitHubIcon from "../public/icons8-github.svg";
+import Footer from "../components/Footer/Footer.js";
 
 export default function ContactPage(props) {
+  const [Icon8, setIcon8] = useState("");
+
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -92,6 +95,11 @@ export default function ContactPage(props) {
     },
   });
 
+  useEffect((props) => {
+    setIcon8("in-line")
+  });
+
+
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -138,13 +146,14 @@ export default function ContactPage(props) {
                     <a  href='https://github.com/sirsoco' target='_blank'>
                       <img src={GitHubIcon} />
                     </a>
-                  </Grid>
+                  </Grid>             
                 </Grid>
               </a>
             </Grid>
           </ThemeProvider>
         </Grid>
       </Grid>
+      <Footer></Footer>
     </div>
   );
 }

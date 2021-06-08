@@ -10,6 +10,7 @@ import dishTrackerImg0 from "../public/DishTrackerLanding.png";
 import dishTrackerImg1 from "../public/dishtracker.gif";
 import Divider from "@material-ui/core/Divider";
 import Button from "@material-ui/core/Button";
+import Footer from "../components/Footer/Footer.js";
 
 export default function WorkPage(props) {
   const app = [
@@ -244,7 +245,7 @@ export default function WorkPage(props) {
             </ThemeProvider>
           </Grid>
         </Grid>
-        <a>footer</a>
+        <Footer></Footer>
       </div>
     </ThemeProvider>
   );

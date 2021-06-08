@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import zIndex from '@material-ui/core/styles/zIndex';
 import './App.css';
@@ -15,7 +15,7 @@ import landingPage from './pages/landingPage';
 import aboutPage from './pages/aboutPage';
 import workPage from './pages/workPage';
 import contactPage from './pages/contactPage';
-import footer from './components/Footer/Footer.js';
+import Footer from './components/Footer/Footer.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -95,6 +95,18 @@ const title = createMuiTheme({
   },
 });
 
+const footer = createMuiTheme({
+  typography: {
+    fontFamily: "Playfair Display, Sans-serif",
+    h6: {
+      fontSize: 12,
+      fontWeight: 300,
+      letterSpacing: 1,
+      lineHeight: 2,
+    },
+  },
+});
+
 const menu = createMuiTheme({
   typography: {
     fontFamily: 'Source Code Pro, monospace',
@@ -107,7 +119,7 @@ const menu = createMuiTheme({
 });
 
 
-function App() {
+function App(props) {
   const classes = useStyles();
   return (
     <Router>
@@ -167,16 +179,15 @@ function App() {
             </div>
           </div>
         </Toolbar>
-      </ThemeProvider>
-
+        </ThemeProvider>
+     
       <Switch>
         <Route exact path='/' component={landingPage}></Route>
         <Route exact path='/about' component={aboutPage}></Route>
         <Route exact path='/work' component={workPage}></Route>
         <Route exact path='/contact' component={contactPage}></Route>
       </Switch>
-      
-      <footer></footer>
+    
     </Router>
   );
 }

@@ -6,6 +6,7 @@ import Box from "@material-ui/core/Box";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import WandrMock from "../public/wander_macbook_pro.jpeg";
 import DishTrackerMock from "../public/dishtracker_iphonex.jpeg";
+import Footer from "../components/Footer/Footer.js";
 
 
 export default function LandingPage(props) {
@@ -74,6 +75,8 @@ export default function LandingPage(props) {
     },
   });
 
+  const Icon8 = "none";
+
   const classes = useStyles();
 
   return (
@@ -110,6 +113,9 @@ export default function LandingPage(props) {
           </Grid>
         </Grid>
       </div>
+      <Footer
+        Icon8={Icon8}></Footer>
     </ThemeProvider>
+    
   );
 }

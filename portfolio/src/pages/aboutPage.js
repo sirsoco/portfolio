@@ -11,6 +11,7 @@ import NodeLogo from "../public/icons8-nodejs.svg";
 import MySqlLogo from "../public/icons8-mysql-logo.svg";
 import MongoDbLogo from "../public/icons8-mongodb.svg";
 import Cert from "../public/fullstackcert.png";
+import Footer from "../components/Footer/Footer.js";
 
 export default function AboutPage(props) {
   const useStyles = makeStyles((theme) => ({
@@ -142,6 +143,8 @@ export default function AboutPage(props) {
 
   const classes = useStyles();
 
+  const Icon8 = "in-line";
+
   return (
     <ThemeProvider>
       <div className={classes.root}>
@@ -222,6 +225,9 @@ export default function AboutPage(props) {
           </Grid>
         </Grid>
       </div>
+      <Footer
+        Icon8={Icon8}>
+      </Footer>
     </ThemeProvider>
   );
 }
