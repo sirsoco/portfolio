@@ -19,7 +19,7 @@ export default function WorkPage(props) {
       name: "Wandr",
       type: "Web Application",
       description:
-        "A geosocial web application that allows users to create profiles and connect with others looking to travel to a particular destination. By clicking profile pinned to a city on the global map a user profile appears and background information such as name, of to a specific city a profiles rendered to a global map.",
+        "A geosocial web application that allows users to create profiles and connect with others looking to travel to a particular destination. By clicking profile pinned to a city on the global map a user profile appears and background information such as name, of to a specific city a profiles rendered to a global map",
       technology: "NodeJS, JavaScript, React, and MySQL",
       developers: [
         "Solomon Obure,",
@@ -34,8 +34,14 @@ export default function WorkPage(props) {
       images: [dishTrackerImg0, dishTrackerImg1],
       name: "Dish Tracker",
       type: "Web Application",
-      description: "",
-      technology: "",
+      description: "DishTracker is a web application designed to assist users in keeping track of dishes they've had at different restaurants so they don't keep ordering the same item. The app uses browser location data to pull up nearby restaurants menus through a REST API",
+      technology: "HTML5, BootStrap,JavaScript, REST API",
+      developers: [
+        "Solomon Obure,",
+        " Avani Dhalgara,",
+        " Patrick Brown,",
+        " and Coby Sher",
+      ],
       link: "https://avanidhalgara.github.io/caps/",
       github: "https://github.com/sirsoco/wander",
     },
