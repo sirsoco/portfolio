@@ -106,10 +106,14 @@ export default function LandingPage(props) {
         </Grid>
         <Grid container className={classes.container}>
           <Grid item md={6} sm={6} xs={12}>
+           <a href='/work/#section1'>
             <img className={classes.DishTracker} src={DishTrackerMock} />
+           </a> 
           </Grid>
           <Grid item md={6} sm={12} xs={12}>
-            <img className={classes.Wandr} src={WandrMock} />
+            <a href='/work/#section2'>
+              <img className={classes.Wandr} src={WandrMock} /> 
+            </a>
           </Grid>
         </Grid>
       </div>

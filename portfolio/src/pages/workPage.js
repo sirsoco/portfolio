@@ -185,10 +185,10 @@ export default function WorkPage(props) {
                 <Grid container className={classes.worksContainer}>
                   <Grid item direction="column">
                     <Grid container className={classes.appNameGrid}>
-                      <Grid item className={classes.appName}>
+                      <Grid item className={classes.appName} id={'#section1'}>
                         <Typography variant="h2">{application.name}</Typography>
                       </Grid>
-                      <Grid item className={classes.buttonGrid}>
+                      <Grid item className={classes.buttonGrid} id ={'#section2'}>
                         <Grid item className={classes.buttonGrid1} item>
                           <a
                             className={classes.button}
