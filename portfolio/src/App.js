@@ -158,7 +158,7 @@ function App(props) {
                     <Grid className={classes.menutype} item>
                       <Typography variant='h2'>
                         <Box letterSpacing={1} m={1}>
-                          <a className={classes.Link} href='/home/#section1'>
+                          <a className={classes.Link} href='/work'>
                             WORK
                           </a>
                         </Box>
